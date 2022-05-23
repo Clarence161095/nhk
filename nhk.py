@@ -8,7 +8,6 @@ from datetime import date
 import requests
 from bs4 import BeautifulSoup
 
-
 def main():
     try:
         r = requests.get('http://www3.nhk.or.jp/news/easy/news-list.json')
@@ -31,7 +30,7 @@ def parse(o):
             print("<html lang='ja'>", file=f)
             print(
                 '<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h2 {  font-size: large;  font-weight: bold;}rt {  font-size: 0.3rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.35);}img {  display: none;}</style>', file=f)
+            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h2 {  font-size: 1rem;  font-weight: bold;}rt {  font-size: 0.3rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.45);}img {  display: none;}</style>', file=f)
             print("</head>", file=f)
             print("<body>", file=f)
             for content in contents:
@@ -46,7 +45,7 @@ def parse(o):
             print("<html lang='ja'>", file=f)
             print(
                 '<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  writing-mode: tb-rl;  -epub-writing-mode: vertical-rl;  -webkit-writing-mode: vertical-rl;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h2 {  font-size: large;  font-weight: bold;}rt {  font-size: 0.3rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.35);}img {  display: none;}</style>', file=f)
+            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  writing-mode: tb-rl;  -epub-writing-mode: vertical-rl;  -webkit-writing-mode: vertical-rl;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h2 {  font-size: 1rem;  font-weight: bold;}rt {  font-size: 0.3rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.45);}img {  display: none;}</style>', file=f)
             print("</head>", file=f)
             print("<body>", file=f)
             for content in contents:
@@ -54,21 +53,6 @@ def parse(o):
             print("</body>", file=f)
             print("</html>", file=f)
             print("File nhk-easy-vertical.html created")
-
-        with open('index.html', "w") as f:
-            print('<?xml version="1.0" encoding="UTF-8" ?>', file=f)
-            print("<!DOCTYPE html>", file=f)
-            print("<html lang='ja'>", file=f)
-            print(
-                '<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  writing-mode: tb-rl;  -epub-writing-mode: vertical-rl;  -webkit-writing-mode: vertical-rl;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h2 {  font-size: large;  font-weight: bold;}rt {  font-size: 0.3rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.35);}img {  display: none;}</style>', file=f)
-            print("</head>", file=f)
-            print("<body>", file=f)
-            for content in contents:
-                print("<br />".join(content), file=f)
-            print("</body>", file=f)
-            print("</html>", file=f)
-            print("File index.html created")
         print("Done.")
     except:
         print("Error parsing")
