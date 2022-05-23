@@ -1,0 +1,30 @@
+version: "3"
+services:
+  web:
+    image: nginx
+    volumes:
+    - .:/usr/share/nginx/html
+    ports:
+    - "8080:80"
+    environment:
+    - NGINX_PORT=80
+  news:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+        - ./:/kindle
+  kindle:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.kindle
+    volumes:
+        - ./:/kindle
+    restart: on-failure
+  kindle-vertical:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.verticalKindle
+    volumes:
+        - ./:/kindle
+    restart: on-failure

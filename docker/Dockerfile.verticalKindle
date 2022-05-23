@@ -1,0 +1,5 @@
+FROM 7010/kindlegen
+WORKDIR /kindle
+
+COPY . .
+CMD ["kindlegen", "nhk-easy-vertical.html"]
