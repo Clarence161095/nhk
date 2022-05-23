@@ -5,3 +5,6 @@
   - http://localhost:8080/nhk-easy.html
 
 ### HINT: After you have 2 .mobi files, you can turn off the application or leave it as it is, the application will continuously get new data but it will be very resource-intensive. (Recommended run: docker compose down)
+
+License: MIT
+Author: Tuan200
