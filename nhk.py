@@ -30,7 +30,7 @@ def parse(o):
             print("<html lang='ja'>", file=f)
             print(
                 '<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h1 {  font-size: 0.65rem;  font-weight: bold;}rt {  font-size: 0.25rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.35);}img {  display: none;}</style>', file=f)
+            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h1 {  font-size: 1.2rem;  font-weight: bold;}rt {  font-size: 0.15rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.3);}img {  display: none;}</style>', file=f)
             print("</head>", file=f)
             print("<body>", file=f)
             for content in contents:
@@ -45,7 +45,7 @@ def parse(o):
             print("<html lang='ja'>", file=f)
             print(
                 '<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  writing-mode: tb-rl;  -epub-writing-mode: vertical-rl;  -webkit-writing-mode: vertical-rl;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h1 {  font-size: 0.65rem;  font-weight: bold;}rt {  font-size: 0.25rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.35);}img {  display: none;}</style>', file=f)
+            print('<style type="text/css">body {  margin-left: 1em;  margin-right: 1em;  font-family: serif;  writing-mode: tb-rl;  -epub-writing-mode: vertical-rl;  -webkit-writing-mode: vertical-rl;  line-break: normal;  -epub-line-break: normal;  -webkit-line-break: normal;}p {  text-indent: 1em;}h1 {  font-size: 1.2rem;  font-weight: bold;}rt {  font-size: 0.15rem;  font-weight: normal;  color: rgba(0, 0, 0, 0.3);}img {  display: none;}</style>', file=f)
             print("</head>", file=f)
             print("<body>", file=f)
             for content in contents:

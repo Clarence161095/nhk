@@ -1,4 +1,5 @@
 # The application may take 5-10 minutes to crawl. (data includes newspapers of the last 1 year)
+## Get news from NHK site and convert to .mobi + hot view on web
 ### Run Command: `docker compose up`
 ### Web:
   - http://localhost:8080/nhk-easy-vertical.html
