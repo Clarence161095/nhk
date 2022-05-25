@@ -2,4 +2,4 @@ FROM 7010/kindlegen
 WORKDIR /kindle
 
 COPY . .
-CMD ["kindlegen", "nhk-easy.html"]
+CMD ["kindlegen", "nhk-easy.opf"]

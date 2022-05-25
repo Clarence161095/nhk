@@ -8,6 +8,7 @@ from datetime import date
 import requests
 from bs4 import BeautifulSoup
 
+
 def main():
     try:
         r = requests.get('http://www3.nhk.or.jp/news/easy/news-list.json')
@@ -21,8 +22,12 @@ def main():
 def parse(o):
     try:
         contents = []
+        i = 0
         for k, v in o[0].items():
             contents.append(parseDate(k, v))
+            if (i > 30):
+                break
+            i = i + 1
 
         with open('nhk-easy.html', "w") as f:
             print('<?xml version="1.0" encoding="UTF-8" ?>', file=f)
@@ -39,6 +44,10 @@ def parse(o):
             print("</html>", file=f)
             print("File nhk-easy.html created")
 
+            file = open('nhk-easy.opf', "w")
+            file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?><package version=\"3.0\" xmlns=\"http://www.idpf.org/2007/opf\"         unique-identifier=\"BookId\"> <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\"           xmlns:dcterms=\"http://purl.org/dc/terms/\">   <dc:title>NHK ニュース・読み物・ nhk-easy.html </dc:title>    <dc:contributor>NHK</dc:contributor>   <dc:language>ja</dc:language>   <dc:publisher>NHK</dc:publisher> </metadata> <manifest>  <item id=\"titlepage\" href=\"nhk-easy.html\" media-type=\"application/xhtml+xml\" /> </manifest> <spine toc=\"tocncx\" page-progression-direction=\"rtl\">  <itemref idref=\"titlepage\" /> </spine></package>")
+            file.close()
+
         with open('nhk-easy-vertical.html', "w") as f:
             print('<?xml version="1.0" encoding="UTF-8" ?>', file=f)
             print("<!DOCTYPE html>", file=f)
@@ -53,6 +62,11 @@ def parse(o):
             print("</body>", file=f)
             print("</html>", file=f)
             print("File nhk-easy-vertical.html created")
+
+            file1 = open('nhk-easy-vertical.opf', "w")
+            file1.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?><package version=\"3.0\" xmlns=\"http://www.idpf.org/2007/opf\"         unique-identifier=\"BookId\"> <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\"           xmlns:dcterms=\"http://purl.org/dc/terms/\">   <dc:title>NHK ニュース・読み物・ nhk-easy-vertical.html </dc:title>    <dc:contributor>NHK</dc:contributor>   <dc:language>ja</dc:language>   <dc:publisher>NHK</dc:publisher> </metadata> <manifest>  <item id=\"titlepage\" href=\"nhk-easy-vertical.html\" media-type=\"application/xhtml+xml\" /> </manifest> <spine toc=\"tocncx\" page-progression-direction=\"rtl\">  <itemref idref=\"titlepage\" /> </spine></package>")
+            file1.close()
+
         print("Done.")
     except:
         print("Error parsing")
