@@ -25,9 +25,9 @@ def parse(o):
         i = 0
         for k, v in o[0].items():
             contents.append(parseDate(k, v))
-            if (i > 100):
-                break
-            i = i + 1
+            # if (i > 100):
+            #     break
+            # i = i + 1
 
         with open('nhk-easy.html', "w") as f:
             print('<?xml version="1.0" encoding="UTF-8" ?>', file=f)
