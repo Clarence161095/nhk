@@ -25,7 +25,7 @@ def parse(o):
         i = 0
         for k, v in o[0].items():
             contents.append(parseDate(k, v))
-            if (i > 30):
+            if (i > 50):
                 break
             i = i + 1
 
